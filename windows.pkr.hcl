@@ -63,7 +63,7 @@ source "vsphere-iso" "WIN2022_Std" {
   iso_paths = local.iso_paths
   cd_files = [
     
-    "./scripts/windows-prepare.ps1",
+    "./scripts/windows-init.ps1",
     
 
   ]
@@ -116,7 +116,7 @@ build {
 
 provisioner "powershell" {
         scripts           = [
-      "${path.cwd}/scripts/windows-prepare.ps1",
+      "${path.cwd}/scripts/windows-init.ps1",
     ]
   }
 
